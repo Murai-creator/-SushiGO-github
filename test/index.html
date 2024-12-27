@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина и оплата</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Корзина</h1>
+    <div id="cart"></div>
+    <h1>Оплата</h1>
+    <form id="payment-form">
+        <label for="name">Имя:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="firstname">Фамилия:</label>
+        <input type="text" id="firstname" name="firstname"><br><br>
+        <label for="number">Номер телефона:</label>
+        <input type="number" id="number" name="number"><br><br>
+        <label for="card-number">Номер карты:</label>
+        <input type="text" id="card-number" name="card-number"><br><br>
+        <label for="exp-date">Дата окончания действия:</label>
+        <input type="text" id="exp-date" name="exp-date"><br><br>
+        <label for="cvc">CVC:</label>
+        <input type="text" id="cvc" name="cvc"><br><br>
+        <button id="pay-btn">Оплатить</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.panel {
+  height: 100%;
+  display: flex; /* Центрирует элементы по горизонтали */
+  align-items: center; /* Центрирует элементы по вертикали */
+  /* padding: 10px; Отступы вокруг панели */
+  z-index: 5;
+  background-color: #f0f0f0; /* Цвет фона панели */
+}
+
+.imgpanel {
+  max-width: 50px; /* Максимальная ширина изображений */
+  width: 100%; /* Ширина 100% от родительского элемента */
+  height: auto;
+  justify-content: right!important; /* Автоматическая высота для сохранения пропорций */
+  margin: 0 30px; /* Отступы между изображениями */
+}
+/* .imgpanel:first-child {
+  max-width: 100px; 
+    width: 100%;
+  justify-content: left;
+} */
+.logo {
+  max-width: 140px; /* Увеличенная максимальная ширина для логотипа */
+  width: 100%;
+  max-height: 100px;
+  height: 100%; /* Автоматическая высота для сохранения пропорций */
+  margin-right: 700px;
+  /* margin: 0 20px; */
+  justify-content: left; /* Отступ справа от логотипа */
+}
+@media (max-width: 768px) {
+  .imgpanel {
+      max-width: 40px; /* Уменьшаем размер изображений на мобильных устройствах */
+      margin: 0 20px; /* Уменьшаем отступы между изображениями */
+  }
+  #payment-form {
+    margin: 80px 0 0 50px;
+  }
+  .logo {
+    margin-right: 300px;
+  }
+  .ptx22 {
+    color: rgb(255, 255, 255);
+    top: 10px;
+    text-align: right;
+    flex-direction: row;
+    text-decoration:none;
+    text-justify: center;
+    font-family: Tilda Sans Black;
+    font-size: 4px!important;
+    position: relative;
+    /* margin: 0 5px 5px; */
+  }
+}
+
+@media (max-width: 500px) {
+  .panel2 {
+    padding: 4px;
+    margin: 2px 0;
+  }
+  .ptx22 {
+    font-size: 4px!important;
+  }
+  .ptx2 {
+    font-size: 4px!important;
+  }
+  .panel {
+    padding: 0;
+  }
+  .product-image {
+   margin-top: 50px;
+  }
+  #payment-form {
+    margin: 10px;
+  }
+  /* .imgpanel {
+      max-width: 20px; Еще больше уменьшаем размер изображений на маленьких экранах
+      margin: 0 10px; Уменьшаем отступы между изображениями
+  } */
+  .ptx2 {
+    margin: 0 3px 10px;
+  }
+  .logo {
+    margin-right: 10px;
+  }
+  
+}
+
+/* .imgpanel:first-child {
+  max-width: 150px;
+  width: 100%;
+  max-height:60px!important;
+  height: 100%;
+} */
+.block {
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    max-height:500px!important;
+    height: 100%;
+    background-color: rgb(192, 192, 192);
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 7%; */
+    /* align-items: center; */
+  }
+  .panel3 {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    background-color: #7a091a;
+    z-index: 3;
+    padding: 20px;
+  }
+  .panel {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(0, 0, 0);
+    z-index: 3;
+    padding: 20px;
+  }
+  .panel2 {
+    position: relative;
+    /* top: 0; */
+    display: flex;
+    width: 100%;
+    height: 70px;
+    background-color:#ffffff;
+    display: flex;
+    text-decoration:none;
+    justify-content: space-around;
+    /* top: 0; Распределяет пространство между элементами */
+    padding: 20px;
+    margin: 20px 0;
+    z-index: 3;
+    /* padding: 20px; */
+  }
+  .carousel-item img {
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    min-height: 200px;
+    height:500px;
+  }
+  .block2 {
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    height:500px!important;
+    /* margin-top: 30px; */
+    background-color: #7a091a;
+    display: flex;
+    /* padding-top: 7%; */
+    align-items: center;
+  }
+  .block22 {
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    height: 900px;;
+    /* margin-top: 30px; */
+    background-color: #7a091a;
+    display: flex;
+    /* padding-top: 7%; */
+    /* align-items: center; */
+  }
+  .block44 {
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    height: 500px;;
+    /* margin-top: 30px; */
+    background-color: #ffffff;
+    display: flex;
+    /* padding-top: 7%; */
+    align-items: center;
+  }
+  .cards:first-child {
+    margin-left: 20px;
+  }
+  @media (max-width: 500px) {
+    .block2 {
+      overflow: scroll;
+      max-width: 1400px;
+      width: 100%;
+      position: relative;
+      height:auto;
+      /* height: 100%; */
+      /* margin-top: 30px; */
+      background-color: #7a091a;
+      display: flex;
+      /* padding-top: 7%; */
+      /* align-items: center; */
+    }
+    .ptx2 {
+      color: rgb(255, 255, 255);
+      top: 10px;
+      text-align: right;
+      /* text-justify: center; */
+      font-family: Tilda Sans Black;
+      font-size: clamp(0rem, 4vw, 1rem);
+      position: relative;
+    }
+
+  }
+  .panel {
+    position: sticky;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(0, 0, 0);
+    z-index: 3;
+    padding: 10px;
+  }
+  .carousel-item img {
+    max-width: 1400px;
+    width: 100%;
+    position: relative;
+    min-height: 200px;
+    height:500px;
+  }
+  .product-card {
+    flex-direction: column;
+    background-color: #fff; /* Цвет фона карточки */
+    border: 1px solid #ddd; /* Рамка карточки */
+    border-radius: 8px; /* Закругление углов */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    width: 260px; /* Максимальная ширина карточки */
+    margin: 15px!important; 
+    padding: 16px; /* Внутренние отступы карточки */
+    text-align: center;/* Центрирование текста */
+    max-height: 450px; 
+  }
+
+.product-image {
+    /* width: 100%; Ширина изображения 100% от родительского элемента */
+    height: 210px; /* Автоматическая высота для сохранения пропорций */
+    border-radius: 8px; /* Закругление углов изображения */
+  }
+  .product-image2 {
+    height: 230px; 
+    border-radius: 8px;
+  }
+
+.product-title {
+    font-size: 1.5em; /* Размер шрифта для названия товара */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.product-description {
+    font-size: 1em; /* Размер шрифта для описания товара */
+    color: #555; /* Цвет текста описания */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.product-price {
+    font-size: 1.2em; /* Размер шрифта для цены товара */
+    color: #000000; /* Цвет текста цены */
+    margin: 10px 0; /* Отступы сверху и снизу */
+}
+
+.add-to-cart {
+    background-color: #200000; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Без рамки */
+    border-radius: 4px; /* Закругление углов кнопки */
+    padding: 10px 15px; /* Внутренние отступы кнопки */
+    cursor: pointer; /* Указатель при наведении на кнопку */
+    font-size: 1em; /* Размер шрифта для текста кнопки */
+}
+
+.add-to-cart:hover {
+    background-color: #000000; /* Цвет фона кнопки при наведении */
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.block3 {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  height:200px!important;
+  /* margin-top: 30px; */
+  background-color: #000000;
+  display: flex;
+  /* padding: 10px; */
+  /* padding-top: 7%; */
+  align-items: right;
+}
+.block4 {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  height:100px!important;
+  /* margin-top: 30px; */
+  background-color: #ffffff;
+  display: flex;
+  /* padding: 10px; */
+  /* padding-top: 7%; */
+  /* align-items: center; */
+}
+.text-bl {
+  align-items: left;
+  width: 60%;
+  font-size: 30px;
+
+}
+.block33 {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  height:50px!important;
+  /* margin-top: 30px; */
+  background-color: #000000;
+  display: flex;
+  /* padding: 10px; */
+  /* padding-top: 7%; */
+  text-align: left;
+  display: flex;
+}
+#cart {
+  width: 50%;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#payment-form {
+  width: 60%;
+  margin: 80px 0 0 200px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 98%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: #200000;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #000000;
+}

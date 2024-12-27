@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.buttons {
+  color: white !important;
+  width: 4%;
+  height: 4%;
+}
+.maintx2 {
+  color: rgb(255, 255, 255);
+  top: 20px;
+  text-align: center!important;
+  /* text-justify: center; */
+  font-family: Tilda Sans Black;
+  font-size: clamp(2rem, 30vw, 3rem);
+  position: relative;
+}
+.maintx2 {
+  color: rgb(255, 255, 255);
+  top: 20px;
+  text-align: center!important;
+  /* text-justify: center; */
+  font-family: Tilda Sans Black;
+  font-size: clamp(2rem, 30vw, 3rem);
+  position: relative;
+}
+.ptx2 {
+  color: rgb(255, 255, 255);
+  top: 10px;
+  text-align: right;
+  text-decoration:none;
+  text-justify: center;
+  font-family: Tilda Sans Black;
+  font-size: clamp(0rem, 8vw, 1rem);
+  position: relative;
+  margin: 0 20px 10px;
+}
+
+.ptx2:hover {
+  background-color: #000000; /* Цвет фона кнопки при наведении */
+}
+.ptx22 {
+  color: rgb(255, 255, 255);
+  top: 10px;
+  text-align: right;
+  flex-direction: row;
+  text-decoration:none;
+  overflow: scroll;
+  text-justify: center;
+  font-family: Tilda Sans Black;
+  font-size: 30px!important;
+  position: relative;
+  margin: 0 5px 10px;
+
+}
+.maintx {
+  color: #7a091a;
+  /* margin-top: 200px;
+    margin-left: 110px; */
+  /* margin: 0 15% 0; */
+  /* text-align: center; */
+  text-align: center;
+  /* text-justify: center; */
+  font-family: Tilda Sans Black;
+  flex-direction:column;
+  font-size: clamp(1rem, 15vw, 2rem);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  /* padding-top: 5%; */
+}
+.maintx:hover {
+  color: #000000; /* Цвет текста при наведении */
+}
+.maintx3 {
+  color: #000000;
+  /* margin-top: 200px;
+    margin-left: 110px; */
+  /* margin: 0 15% 0; */
+  /* text-align: center; */
+  text-align: center;
+  /* text-justify: center; */
+  font-family: Tilda Sans Black;
+  flex-direction:column;
+  font-size: clamp(1rem, 45vw, 4rem);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  /* padding-top: 5%; */
+}
+.link-container {
+  display: flex;
+  text-decoration:none;
+  justify-content: space-around;
+  /* top: 0; Распределяет пространство между элементами */
+  padding: 20px;
+  margin: 20px 0;
+}
+.paragtx {
+  color: rgb(255, 255, 255);
+  /* margin:auto; */
+  /* text-align: center;
+    align-items: center; */
+  font-family: Open Sans;
+  font-size: clamp(1rem, 7vw, 1rem);
+  position: relative;
+  z-index: 2;
+  text-decoration:none;
+  margin-right: 20px;
+}
+
+.paragtx2 {
+  color: #000000;
+  /* margin-top: 230px; */
+  /* margin-left: 50px; */
+  margin: auto;
+  text-justify: center;
+  font-family: Open Sans;
+  font-size: clamp(1rem, 7vw, 1rem);
+  position: absolute;
+  z-index: 2;
+}
+.textbox {
+  width: 100%;
+  marg
+  text-align: center;
+  height: 100px;
+  background-color: #7a091a;
+}
+/* .boxtx {
+    width:60%;
+    /* height: 100px;
+ } */
+
+.paragtx3 {
+  color: #3a3a3a;
+  /* margin-top: 230px; */
+  /* margin: 0 50px 0; */
+  margin: auto;
+  text-align: center;
+  font-family: Open Sans;
+  font-size: clamp(1rem, 7vw, 1rem);
+  position: relative;
+  z-index: 2;
+}
