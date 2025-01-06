@@ -1,0 +1,40 @@
+<?php
+if (isset($_POST['name']) && isset($_POST['firstname']) && isset($_POST['number']) && isset($_POST['email'])) {
+    $name = $_POST['name'];
+    $firstname = $_POST['firstname'];
+    $number = $_POST['number'];
+    $email = $_POST['email'];
+    
+    $db_host = "localhost"; 
+    $db_user = "u2909782_default"; 
+    $db_password = "5n7feA5Gg2KeO1Li"; 
+    $db_base = 'u2909782_main';
+    $db_table = "mytable"; 
+
+    try {
+        $db = new PDO("mysql:host=$db_host;dbname=$db_base", $db_user, $db_password);
+        $db->exec("set names utf8");
+
+        $query = $db->prepare("INSERT INTO $db_table (name, firstname, number, email) VALUES (:name, :firstname, :number, :email)");
+
+        $data = array(
+            'name' => $name,
+            'firstname' => $firstname,
+            'number' => $number,
+            'email' => $email
+        ); 
+
+        $result = $query->execute($data);
+        
+        if ($result) {
+            echo "Успех. Информация занесена в базу данных.";
+        } else {
+            echo "Ошибка при занесении данных в базу.";
+        }
+    } catch (PDOException $e) {
+        print "Ошибка!: " . $e->getMessage() . "<br/>";
+    }
+} else {
+    echo "Пожалуйста, заполните все поля.";
+}
+?>
