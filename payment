@@ -1,0 +1,73 @@
+<?php
+try {
+    $dbh = new PDO('odbc:SAMPLE', 'db2inst1', 'ibmdb2', array(PDO::ATTR_PERSISTENT => true));
+    echo "Подключились\n";
+} catch (Exception $e) {
+    die("Не удалось подключиться: " . $e->getMessage());
+}
+function processPayment($dbh, $cartItems, $userId) {
+    try {
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $dbh->beginTransaction();
+        foreach ($cartItems as $item) {
+            $productId = $item['id'];
+            $quantity = $item['quantity'];
+            $price = $item['price'];
+            $totalAmount = $price * $quantity;
+            $stmt = $dbh->prepare("INSERT INTO orders (user_id, product_id, quantity, total_amount) VALUES (:user_id, :product_id, :quantity, :total_amount)");
+            $stmt->execute([
+                ':user_id' => $userId,
+                ':product_id' => $productId,
+                ':quantity' => $quantity,
+                ':total_amount' => $totalAmount
+            ]);
+        }
+                $apiUrl = 'https://api.yourbank.ru/sbp/v1/payments';
+                $apiKey = 'YOUR_API_KEY'; 
+                $currency = 'RUB'; 
+                $description = 'Оплата заказа';
+                $recipientPhone = '89951052827';
+                $data = [
+                    'amount' => $totalAmount,
+                    'currency' => $currency,
+                    'description' => $description,
+                    'recipient' => [
+                        'type' => 'phone',
+                        'value' => $recipientPhone
+                    ]
+                ];
+                $ch = curl_init($apiUrl);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                    'Authorization: Bearer ' . $apiKey,
+                    'Content-Type: application/json'
+                ]);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
+                $response = curl_exec($ch);
+                $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+                curl_close($ch);
+                if ($httpCode === 200) {
+                    $responseData = json_decode($response, true);
+                    echo "Платеж успешно создан. ID транзакции: " . $responseData['transaction_id'];
+                } else {
+                    echo "Ошибка при создании платежа: " . $response;
+                }
+
+        if ($paymentSuccess) {
+            $dbh->commit();
+            echo "Платеж успешно обработан и заказ создан.\n";
+        } else {
+            throw new Exception("Ошибка при обработке платежа.");
+        }
+
+    } catch (Exception $e) {
+        $dbh->rollBack();
+        echo "Ошибка: " . $e->getMessage() . "\n";
+    }
+}
+
+
+processPayment($dbh, $cartItems);
+// processPayment($dbh, $cartItems, $userId);
+?>
